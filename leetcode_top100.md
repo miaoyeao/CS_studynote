@@ -47,5 +47,6 @@ class Solution:
         
         return firstnode
 ```
-  - 2. 
-  - ***python中的链表数据结构***
+  - 2. 注意python中没有问号表达式，采用`x if a else y`来实现; python中`int()`是向0取整，`\\`是向下取整
+  - ***python中的链表数据结构***<https://zhuanlan.zhihu.com/p/60057180>
+  - 对于链表长短不一的情况，考虑到后边为None是设置为0，即`[7, 8]`看作`[7, 8, 0]`
