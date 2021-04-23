@@ -1,6 +1,7 @@
 # 一. [两数之和](https://leetcode-cn.com/problems/two-sum/)
   - 1. 暴力穷举（##时间复杂度较高##）
   - 2. ##哈希表方式搜索（利用字典）##
+  - ###python中的字典###
 ###
 # 二. [两数相加](https://leetcode-cn.com/problems/add-two-numbers/submissions/)
   - 1. 首先将两个链表表示数值分别转化为两个int变量，相加后，将结果再转化为链表
@@ -47,3 +48,4 @@ class Solution:
         return firstnode
 ```
   - 2. 
+  - ###python中的链表数据结构###
