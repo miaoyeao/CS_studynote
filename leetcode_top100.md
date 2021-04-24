@@ -86,3 +86,19 @@ class Solution:
                     num = num + 100
         return num
 ```
+    - 题解：
+```
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        num = 0
+        d_s2n = {"I": 1, "V": 5, "X": 10, "L": 50, 
+                 "C": 100, "D": 500, "M": 1000, }
+        for idx in range(len(s) - 1):
+            if d_s2n[s[idx]] < d_s2n[s[idx + 1]]:
+                num -= d_s2n[s[idx]]
+            else:
+                num += d_s2n[s[idx]]
+        num += d_s2n[s[len(s) - 1]]
+
+        return num         
+```
