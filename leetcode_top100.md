@@ -86,7 +86,7 @@ class Solution:
                     num = num + 100
         return num
 ```
-    - 题解：
+  - 方法2（题解）：考虑当当前字符的数值小于右边时，实际是减上当前字符
 ```
 class Solution:
     def romanToInt(self, s: str) -> int:
