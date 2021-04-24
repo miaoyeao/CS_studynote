@@ -102,3 +102,43 @@ class Solution:
 
         return num         
 ```
+# 六、[有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)
+  - 第一次做：
+```
+class Solution:
+    def isValid(self, s: str) -> bool:
+        tmp_s = ""
+        res = ["()", "[]", "{}"]
+        for s_i in s:
+            if len(tmp_s) > 0:
+                if tmp_s[-1] + s_i in res:
+                    tmp_s = tmp_s[:-1]
+                else:
+                    tmp_s = tmp_s + s_i
+            else:
+                tmp_s = s_i
+        return len(tmp_s) == 0
+```
+  - 题解：利用栈，此外为了方便搜索，利用哈希表来存括号对，右括号为键左括号为值。
+```
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2 != 0:
+            return False
+        else:
+            hashTable = {
+                ")":"(",
+                "]":"[",
+                "}":"{",
+            }
+            stack = []
+            for s_i in s:
+                if stack:
+                    if s_i in hashTable and hashTable[s_i] == stack[-1]:
+                        stack.pop()
+                    else:
+                        stack.append(s_i)
+                else:
+                    stack.append(s_i)
+            return not stack
+```
