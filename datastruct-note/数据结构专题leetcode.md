@@ -52,3 +52,28 @@ class Solution:
             i = i + 1
         return sumW
 ```
+  - 解法3： 参考解法1<https://leetcode-cn.com/problems/trapping-rain-water/solution/wei-en-tu-jie-fa-zui-jian-dan-yi-dong-10xing-jie-j/>
+```
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        if 0 == len(height):
+            return 0
+        else:
+            s1 = 0
+            s2 = 0
+            lmax = 0
+            rmax = 0
+            for i in range(len(height)):
+                if height[i] > lmax:
+                    lmax = height[i]
+                s1 = s1 + lmax
+            for i in range(len(height)):
+                if height[len(height) - 1 - i] > rmax:
+                    rmax = height[len(height) - 1 - i]
+                s2 = s2 + rmax
+
+            sumWater = s1 + s2 - rmax * len(height) - sum(height)
+
+            return sumWater
+```
+
